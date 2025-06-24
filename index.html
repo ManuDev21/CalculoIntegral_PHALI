@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Modelo Matemático - PHALI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap & Chart.js -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="img/Logo.png" alt="PHALI Logo" width="40" height="40" class="me-2">
+      PHALI - Modelo Matemático
+    </a>
+  </div>
+</nav>
+
+<div class="container my-5">
+  <div class="card p-4 shadow-lg">
+    <h2 class="text-center mb-4">Simulador de Satisfacción - PHALI</h2>
+    <p class="text-center">Calcula el nivel de satisfacción del usuario con base en las variables de uso de la plataforma.</p>
+
+    <div class="alert alert-info text-center">
+      <strong>Fórmula:</strong> S = 2 × Cursos + 0.5 × Tiempo + 30 × Accesibilidad
+    </div>
+
+    <form id="modeloForm" class="row g-3">
+      <div class="col-md-4">
+        <label for="cursos" class="form-label">Cursos completados</label>
+        <input type="number" class="form-control" id="cursos" required min="0">
+      </div>
+      <div class="col-md-4">
+        <label for="tiempo" class="form-label">Tiempo promedio (min)</label>
+        <input type="number" class="form-control" id="tiempo" required min="0">
+      </div>
+      <div class="col-md-4">
+        <label for="accesibilidad" class="form-label">Accesibilidad (0 a 1)</label>
+        <input type="number" step="0.01" class="form-control" id="accesibilidad" required min="0" max="1">
+      </div>
+      <div class="text-center mt-4">
+        <button type="submit" class="btn btn-primary px-4">Calcular</button>
+      </div>
+    </form>
+
+    <div id="resultado" class="text-center mt-4 display-6 text-success"></div>
+
+    <canvas id="grafica" class="mt-5"></canvas>
+  </div>
+</div>
+
+<footer class="text-center mt-5 mb-3 text-muted">
+  © 2025 PHALI | Plataforma Híbrida de Aprendizaje en Línea Inclusivo
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="js/scritp.js"></script>
+</body>
+</html>
